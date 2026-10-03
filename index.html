@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IT Seminar Registration</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="page">
+    <h1>IT Seminar Registration</h1>
+    <p class="intro">Fill in every field. Your details are checked in your browser and nothing is sent anywhere.</p>
+
+    <form id="registrationForm" novalidate>
+
+      <div class="field">
+        <label for="fullName">Full name</label>
+        <input type="text" id="fullName" name="fullName" required autocomplete="name"
+               aria-invalid="false" aria-describedby="fullNameError">
+        <p class="error" id="fullNameError"></p>
+      </div>
+
+      <div class="field">
+        <label for="studentNumber">Student number</label>
+        <input type="text" id="studentNumber" name="studentNumber" required placeholder="24-1234-123"
+               aria-invalid="false" aria-describedby="studentNumberHint studentNumberError">
+        <p class="hint" id="studentNumberHint">Format: 24-1234-123</p>
+        <p class="error" id="studentNumberError"></p>
+      </div>
+
+      <div class="field">
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email" required autocomplete="email"
+               aria-invalid="false" aria-describedby="emailError">
+        <p class="error" id="emailError"></p>
+      </div>
+
+      <div class="field">
+        <label for="mobileNumber">Mobile number</label>
+        <input type="tel" id="mobileNumber" name="mobileNumber" required placeholder="09123456789"
+               aria-invalid="false" aria-describedby="mobileNumberHint mobileNumberError">
+        <p class="hint" id="mobileNumberHint">09 followed by 9 digits, or +639 followed by 9 digits. No spaces or hyphens.</p>
+        <p class="error" id="mobileNumberError"></p>
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required autocomplete="new-password"
+               aria-invalid="false" aria-describedby="passwordFeedback passwordError">
+        <p class="feedback" id="passwordFeedback" aria-live="polite"></p>
+        <p class="error" id="passwordError"></p>
+      </div>
+
+      <div class="field">
+        <label for="confirmPassword">Confirm password</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required autocomplete="new-password"
+               aria-invalid="false" aria-describedby="confirmPasswordError">
+        <p class="error" id="confirmPasswordError"></p>
+      </div>
+
+      <div class="field">
+        <label for="course">Course</label>
+        <select id="course" name="course" required aria-invalid="false" aria-describedby="courseError">
+          <option value="" selected>Select your course.</option>
+          <option value="BSIT">BSIT</option>
+          <option value="BSCS">BSCS</option>
+        </select>
+        <p class="error" id="courseError"></p>
+      </div>
+
+      <div class="field checkbox">
+        <input type="checkbox" id="terms" name="terms" required aria-invalid="false" aria-describedby="termsError">
+        <label for="terms">I agree to the seminar terms and conditions</label>
+        <p class="error" id="termsError"></p>
+      </div>
+
+      <div class="actions">
+        <button type="submit" id="registerBtn">Register</button>
+        <button type="reset" id="resetBtn">Reset</button>
+      </div>
+    </form>
+
+    <p id="successMessage" class="success" role="status" hidden></p>
+
+    <section id="registrationSummary" class="summary" aria-live="polite" hidden>
+      <h2>Registration summary</h2>
+      <dl>
+        <dt>Full name</dt><dd id="summaryName"></dd>
+        <dt>Student number</dt><dd id="summaryStudentNumber"></dd>
+        <dt>Email address</dt><dd id="summaryEmail"></dd>
+        <dt>Mobile number</dt><dd id="summaryMobileNumber"></dd>
+        <dt>Course</dt><dd id="summaryCourse"></dd>
+      </dl>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
